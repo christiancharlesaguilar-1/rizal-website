@@ -1,0 +1,3735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life and Works of Rizal - Samar State University</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #d6d3d1;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1c1917;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #92400e, #b45309, #92400e);
+            border-radius: 6px;
+            border: 2px solid #1c1917;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #b45309, #d97706, #b45309);
+        }
+
+        ::selection {
+            background-color: #92400e;
+            color: #fef3c7;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+
+        /* Sepia Filter */
+        .sepia {
+            filter: sepia(0.6) brightness(0.95) contrast(1.1);
+        }
+
+        .grayscale {
+            filter: grayscale(1);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: linear-gradient(to right, rgba(12, 10, 9, 0.8), rgba(69, 26, 10, 0.8), rgba(12, 10, 9, 0.8));
+            backdrop-filter: blur(4px);
+            border-bottom: 2px solid rgba(120, 53, 15, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: linear-gradient(to right, #1c1917, #451a03, #1c1917);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border-bottom: 4px solid #b45309;
+        }
+
+        nav::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #b45309, #d97706, #b45309);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .nav-logo {
+            position: relative;
+        }
+
+        .nav-logo::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            background: linear-gradient(to right, #d97706, #a16207);
+            border-radius: 4px;
+            opacity: 0.5;
+            filter: blur(4px);
+        }
+
+        .nav-logo-inner {
+            position: relative;
+            background: linear-gradient(to bottom right, #92400e, #713f12);
+            border: 2px solid #d97706;
+            padding: 0.5rem;
+        }
+
+        .nav-title {
+            color: #fcd34d;
+            font-size: 1.25rem;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+            display: none;
+        }
+
+        .nav-subtitle {
+            color: #a8a29e;
+            font-size: 0.75rem;
+        }
+
+        @media (min-width: 768px) {
+            .nav-title {
+                display: block;
+            }
+        }
+
+        .nav-menu {
+            display: none;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        @media (min-width: 1024px) {
+            .nav-menu {
+                display: flex;
+            }
+        }
+
+        .nav-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid transparent;
+            background: rgba(28, 25, 23, 0.5);
+            color: #d6d3d1;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-btn:hover {
+            background: rgba(120, 53, 15, 0.3);
+            color: #fcd34d;
+            border-color: #b45309;
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(to right, #b45309, #854d0e);
+            color: white;
+            border-color: #d97706;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        .mobile-menu-btn {
+            display: flex;
+            background: linear-gradient(to right, #92400e, #713f12);
+            border: 2px solid #d97706;
+            padding: 0.75rem;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        @media (min-width: 1024px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        .mobile-menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to bottom, #1c1917, #451a03);
+            border-bottom: 4px solid #b45309;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+        }
+
+        .mobile-menu.open {
+            display: block;
+        }
+
+        .mobile-nav-btn {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid transparent;
+            background: rgba(28, 25, 23, 0.5);
+            color: #d6d3d1;
+            text-align: left;
+            cursor: pointer;
+            margin-bottom: 0.5rem;
+            text-decoration: none;
+        }
+
+        .mobile-nav-btn.active {
+            background: linear-gradient(to right, #b45309, #854d0e);
+            color: white;
+            border-color: #d97706;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom right, #292524, #451a03, #713f12);
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.5) 100%);
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.2;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+        }
+
+        .hero-grid {
+            display: grid;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero-text {
+                order: 1;
+            }
+            .hero-image {
+                order: 2;
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(217, 119, 6, 0.3);
+            border: 2px solid rgba(245, 158, 11, 0.5);
+            backdrop-filter: blur(4px);
+            margin-bottom: 1rem;
+        }
+
+        .hero-badge span {
+            color: #fde68a;
+            font-size: 0.875rem;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.1em;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+        }
+
+        .hero h1 span {
+            display: block;
+            color: #fcd34d;
+        }
+
+        .hero-divider {
+            width: 6rem;
+            height: 4px;
+            background: linear-gradient(to right, #f59e0b, #d97706);
+            margin: 1rem 0;
+        }
+
+        .hero-quote {
+            font-size: 1.25rem;
+            color: #fde68a;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero-quote {
+                font-size: 1.5rem;
+            }
+        }
+
+        .hero-desc {
+            font-size: 1.125rem;
+            color: #a8a29e;
+            line-height: 1.75;
+            max-width: 36rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            padding-top: 2rem;
+        }
+
+        .stat-card {
+            border: 2px solid rgba(180, 83, 9, 0.5);
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .stat-card .number {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-card .label {
+            font-size: 0.875rem;
+            color: #a8a29e;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-portrait {
+            position: relative;
+            max-width: 400px;
+        }
+
+        .hero-portrait::before {
+            content: '';
+            position: absolute;
+            inset: -16px;
+            background: linear-gradient(to bottom right, #d97706, #a16207, #92400e);
+            opacity: 0.75;
+            filter: blur(16px);
+            border-radius: 50%;
+        }
+
+        .portrait-frame {
+            position: relative;
+            border: 8px solid #78350f;
+            background: linear-gradient(to bottom right, #92400e, #713f12);
+            padding: 0.5rem;
+        }
+
+        .portrait-frame img {
+            width: 100%;
+            height: auto;
+            filter: grayscale(1) sepia(0.6) contrast(1.1) brightness(0.9);
+            display: block;
+        }
+
+        .portrait-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 1.5rem;
+        }
+
+        .portrait-caption p {
+            color: #fde68a;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+        }
+
+        .portrait-caption .sub {
+            color: #a8a29e;
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+        }
+
+        .corner-decoration {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+        }
+
+        .corner-tl {
+            top: -8px;
+            left: -8px;
+            border-top: 4px solid #fbbf24;
+            border-left: 4px solid #fbbf24;
+        }
+
+        .corner-tr {
+            top: -8px;
+            right: -8px;
+            border-top: 4px solid #fbbf24;
+            border-right: 4px solid #fbbf24;
+        }
+
+        .corner-bl {
+            bottom: -8px;
+            left: -8px;
+            border-bottom: 4px solid #fbbf24;
+            border-left: 4px solid #fbbf24;
+        }
+
+        .corner-br {
+            bottom: -8px;
+            right: -8px;
+            border-bottom: 4px solid #fbbf24;
+            border-right: 4px solid #fbbf24;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .scroll-indicator-inner {
+            width: 24px;
+            height: 40px;
+            border: 2px solid #fbbf24;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .scroll-indicator-inner::before {
+            content: '';
+            width: 4px;
+            height: 12px;
+            background: #fbbf24;
+            border-radius: 2px;
+            margin-top: 8px;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title-box {
+            display: inline-block;
+            border: 4px solid #b45309;
+            background: rgba(28, 25, 23, 0.8);
+            backdrop-filter: blur(4px);
+            padding: 2rem;
+        }
+
+        .section-title-box h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .section-divider {
+            width: 8rem;
+            height: 4px;
+            background: linear-gradient(to right, transparent, #f59e0b, transparent);
+            margin: 1rem auto;
+        }
+
+        .section-title-box p {
+            color: #a8a29e;
+            font-size: 1.125rem;
+            max-width: 42rem;
+        }
+
+        /* Biography Section */
+        .biography {
+            background: linear-gradient(to bottom, #1c1917, #451a03, #1c1917);
+            position: relative;
+        }
+
+        .biography::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.1;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='%23d4a574'/%3E%3Cpath d='M30 30L0 0h60z' fill='%23c49563'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 72rem;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #d97706, #a16207, #d97706);
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-content {
+                flex-direction: column;
+                padding-left: 50px;
+            }
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            flex-direction: row-reverse;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                flex-direction: column;
+                padding-left: 50px;
+            }
+        }
+
+        .timeline-text {
+            width: 41.666%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-text {
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-text {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        .timeline-card {
+            background: linear-gradient(to bottom right, #292524, #451a03);
+            border: 4px solid #b45309;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-card:hover {
+            border-color: #f59e0b;
+            transform: scale(1.05);
+        }
+
+        .timeline-year {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            justify-content: flex-end;
+        }
+
+        .timeline-item:nth-child(even) .timeline-year {
+            justify-content: flex-start;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-year {
+                justify-content: flex-start;
+            }
+        }
+
+        .timeline-year .line {
+            width: 64px;
+            height: 2px;
+            background: #f59e0b;
+        }
+
+        .timeline-year span {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .timeline-card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fcd34d;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-card p {
+            color: #a8a29e;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 24px;
+            background: #f59e0b;
+            border: 4px solid #1c1917;
+            border-radius: 50%;
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-marker:hover {
+            transform: translateX(-50%) scale(1.5);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-marker {
+                left: 20px;
+            }
+        }
+
+        .timeline-image {
+            width: 41.666%;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-image {
+                width: 100%;
+            }
+        }
+
+        .timeline-image-frame {
+            border: 4px solid #b45309;
+            background: #1c1917;
+            padding: 0.5rem;
+        }
+
+        .timeline-image-frame:hover {
+            border-color: #f59e0b;
+        }
+
+        .timeline-image-frame img {
+            width: 100%;
+            height: 12rem;
+            object-fit: cover;
+            filter: grayscale(1) sepia(0.6);
+        }
+
+        .quote-box {
+            max-width: 48rem;
+            margin: 5rem auto 0;
+            text-align: center;
+            border-top: 2px solid #b45309;
+            border-bottom: 2px solid #b45309;
+            padding: 2rem 0;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(4px);
+        }
+
+        .quote-box p {
+            font-size: 1.5rem;
+            color: #fcd34d;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .quote-box .author {
+            color: #a8a29e;
+        }
+
+        /* Literary Works */
+        .literary-works {
+            background: linear-gradient(to bottom, #451a03, #1c1917, #451a03);
+            position: relative;
+        }
+
+        .literary-works::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='30' font-family='serif' font-size='80' fill='%23d4a574' opacity='0.3'%3E%F0%9F%93%96%3C/text%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .book-section {
+            max-width: 72rem;
+            margin: 0 auto 5rem;
+        }
+
+        .book-grid {
+            display: grid;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        @media (min-width: 1024px) {
+            .book-grid {
+                grid-template-columns: 2fr 3fr;
+            }
+            .book-section.reverse .book-grid {
+                grid-template-columns: 3fr 2fr;
+            }
+            .book-section.reverse .book-content {
+                order: 1;
+            }
+            .book-section.reverse .book-cover {
+                order: 2;
+            }
+        }
+
+        .book-cover {
+            position: relative;
+        }
+
+        .book-cover::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            background: linear-gradient(to bottom right, #d97706, #a16207);
+            opacity: 0.5;
+            filter: blur(16px);
+        }
+
+        .book-frame {
+            position: relative;
+            background: linear-gradient(to bottom right, #92400e, #713f12);
+            border: 8px solid #78350f;
+            padding: 1rem;
+        }
+
+        .book-frame img {
+            width: 100%;
+            height: 24rem;
+            object-fit: cover;
+            filter: sepia(0.6) brightness(0.9);
+        }
+
+        .book-meta {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .book-meta p {
+            color: #fcd34d;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.875rem;
+        }
+
+        .book-content {
+            space: 1.5rem;
+        }
+
+        .book-header {
+            border-left: 4px solid #d97706;
+            background: rgba(41, 37, 36, 0.5);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .book-section.reverse .book-header {
+            border-left: none;
+            border-right: 4px solid #d97706;
+            text-align: right;
+        }
+
+        .book-header h3 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .book-header .subtitle {
+            font-size: 1.25rem;
+            color: #fcd34d;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .book-header p {
+            color: #a8a29e;
+            line-height: 1.75;
+            font-size: 1.125rem;
+        }
+
+        .themes-box, .characters-box {
+            background: linear-gradient(to bottom right, #292524, rgba(69, 26, 3, 0.5));
+            border: 2px solid #b45309;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .themes-box h4, .characters-box h4 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .themes-box ul {
+            list-style: none;
+            space: 0.5rem;
+        }
+
+        .themes-box li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            color: #a8a29e;
+            margin-bottom: 0.5rem;
+        }
+
+        .themes-box li::before {
+            content: '▸';
+            color: #f59e0b;
+            margin-top: 2px;
+        }
+
+        .characters-list {
+            space: 0.75rem;
+        }
+
+        .character-item {
+            border-left: 2px solid #d97706;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 0.5rem 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .character-item .name {
+            color: #fcd34d;
+            font-weight: bold;
+        }
+
+        .character-item .role {
+            color: #a8a29e;
+            font-size: 0.875rem;
+        }
+
+        .section-divider-center {
+            max-width: 56rem;
+            margin: 5rem auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-divider-center .line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d97706, transparent);
+        }
+
+        .section-divider-center span {
+            color: #f59e0b;
+            font-size: 1.5rem;
+        }
+
+        .impact-box {
+            max-width: 56rem;
+            margin: 5rem auto 0;
+            background: linear-gradient(to right, #1c1917, #451a03, #1c1917);
+            border: 4px solid #b45309;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .impact-box p {
+            font-size: 1.5rem;
+            color: #fcd34d;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .impact-box .line {
+            width: 8rem;
+            height: 4px;
+            background: #f59e0b;
+            margin: 0 auto;
+        }
+
+        /* Nationalism Section */
+        .nationalism {
+            background: linear-gradient(to bottom, #1c1917, #713f12, #1c1917);
+            position: relative;
+        }
+
+        .nationalism::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.1;
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h80v80H0z' fill='none'/%3E%3Cpath d='M0 40h80M40 0v80' stroke='%23d4a574' stroke-width='1'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .laliga-box {
+            max-width: 64rem;
+            margin: 0 auto 5rem;
+            background: linear-gradient(to bottom right, #451a03, #713f12, #451a03);
+            border: 4px solid #b45309;
+            padding: 2rem;
+        }
+
+        .laliga-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .laliga-header h3 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: #fcd34d;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .laliga-header .line {
+            width: 8rem;
+            height: 4px;
+            background: #f59e0b;
+            margin: 0 auto 1rem;
+        }
+
+        .laliga-header p {
+            color: #e7e5e4;
+            font-size: 1.25rem;
+            font-style: italic;
+        }
+
+        .laliga-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .laliga-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .laliga-card {
+            background: rgba(28, 25, 23, 0.5);
+            border: 2px solid #d97706;
+            padding: 1.5rem;
+        }
+
+        .laliga-card h4 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .laliga-card ul {
+            list-style: none;
+        }
+
+        .laliga-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            color: #a8a29e;
+            margin-bottom: 0.75rem;
+        }
+
+        .laliga-card li::before {
+            content: '▸';
+            color: #f59e0b;
+            font-size: 1.25rem;
+        }
+
+        .motto-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .motto-box p {
+            font-size: 1.5rem;
+            color: #fcd34d;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .motto-box .translation {
+            color: #a8a29e;
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+
+        .history-note {
+            background: linear-gradient(to right, rgba(127, 29, 29, 0.3), rgba(69, 26, 3, 0.3), rgba(30, 58, 138, 0.3));
+            border: 2px solid #d97706;
+            padding: 1.5rem;
+        }
+
+        .history-note p {
+            color: #a8a29e;
+            text-align: center;
+            font-size: 1.125rem;
+        }
+
+        .history-note span {
+            color: #fbbf24;
+            font-weight: bold;
+        }
+
+        .reforms-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .reforms-header h3 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .reforms-header p {
+            color: #a8a29e;
+            font-size: 1.125rem;
+        }
+
+        .reforms-grid {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 72rem;
+            margin: 0 auto 5rem;
+        }
+
+        @media (min-width: 768px) {
+            .reforms-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .reforms-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .reform-card {
+            background: linear-gradient(to bottom right, #292524, #451a03);
+            border: 4px solid #b45309;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .reform-card:hover {
+            border-color: #f59e0b;
+            transform: scale(1.05);
+        }
+
+        .reform-number {
+            background: rgba(217, 119, 6, 0.2);
+            border: 2px solid #d97706;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .reform-number span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fbbf24;
+        }
+
+        .reform-card h4 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #fcd34d;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.75rem;
+        }
+
+        .reform-card p {
+            color: #a8a29e;
+            line-height: 1.625;
+        }
+
+        .principles-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .principles-header h3 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .principles-grid {
+            display: grid;
+            gap: 2rem;
+            max-width: 72rem;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .principles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .principle-card {
+            background: linear-gradient(to bottom right, #1c1917, #451a03);
+            border: 4px solid #b45309;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .principle-card:hover {
+            border-color: #f59e0b;
+        }
+
+        .principle-icon {
+            font-size: 3.75rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .principle-card h4 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fbbf24;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .principle-quote {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid #d97706;
+            padding: 1rem;
+        }
+
+        .principle-quote p {
+            color: #fde68a;
+            font-style: italic;
+            text-align: center;
+            font-size: 1.125rem;
+        }
+
+        .nationalism-quote {
+            max-width: 64rem;
+            margin: 5rem auto 0;
+            border: 4px double #b45309;
+            background: linear-gradient(to bottom right, #1c1917, #451a03);
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .nationalism-quote p {
+            font-size: 1.875rem;
+            color: #fcd34d;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .quote-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .quote-author .line {
+            width: 6rem;
+            height: 1px;
+            background: #f59e0b;
+        }
+
+        .quote-author span {
+            color: #f59e0b;
+            font-weight: bold;
+        }
+
+        /* Martyrdom Section */
+        .martyrdom {
+            background: linear-gradient(to bottom, #451a03, #0c0a09, #7f1d1d);
+            position: relative;
+        }
+
+        .martyrdom::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .martyrdom::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M45 0v100M0 50h100' stroke='%23d4a574' stroke-width='2'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .final-days {
+            max-width: 56rem;
+            margin: 0 auto 5rem;
+            background: linear-gradient(to bottom right, #1c1917, #450a0a);
+            border: 4px solid #78350f;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .final-days h3 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .final-days-list {
+            space: 1.5rem;
+        }
+
+        .final-day-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .final-day-date {
+            flex-shrink: 0;
+            width: 10rem;
+        }
+
+        .final-day-date .date-box {
+            background: rgba(120, 53, 15, 0.5);
+            border: 2px solid #b45309;
+            padding: 0.5rem 1rem;
+        }
+
+        .final-day-date p {
+            color: #fcd34d;
+            font-weight: bold;
+            font-size: 0.875rem;
+            text-align: center;
+        }
+
+        .final-day-content {
+            flex: 1;
+            background: rgba(28, 25, 23, 0.5);
+            border-left: 4px solid #b45309;
+            padding: 1rem;
+        }
+
+        .final-day-content p {
+            color: #a8a29e;
+            line-height: 1.625;
+        }
+
+        .poem-section {
+            max-width: 64rem;
+            margin: 0 auto 5rem;
+            display: grid;
+            gap: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        @media (min-width: 1024px) {
+            .poem-section {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .monument-frame {
+            position: relative;
+        }
+
+        .monument-frame::before {
+            content: '';
+            position: absolute;
+            inset: -12px;
+            background: linear-gradient(to bottom right, #b45309, #7f1d1d);
+            opacity: 0.5;
+            filter: blur(16px);
+        }
+
+        .monument-frame-inner {
+            position: relative;
+            background: #1c1917;
+            border: 8px solid #78350f;
+            padding: 1rem;
+        }
+
+        .monument-frame img {
+            width: 100%;
+            height: 24rem;
+            object-fit: cover;
+            filter: grayscale(1) sepia(0.6) contrast(1.25);
+        }
+
+        .monument-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, black, transparent);
+            padding: 1.5rem;
+        }
+
+        .monument-caption p {
+            color: #fcd34d;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+        }
+
+        .poem-content {
+            space: 1.5rem;
+        }
+
+        .poem-box {
+            background: linear-gradient(to bottom right, #451a03, #1c1917);
+            border: 4px solid #78350f;
+            padding: 2rem;
+        }
+
+        .poem-box h3 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .poem-box .subtitle {
+            font-size: 1.25rem;
+            color: #fcd34d;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .poem-excerpt {
+            background: rgba(0, 0, 0, 0.4);
+            border-left: 4px solid #d97706;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .poem-excerpt p {
+            color: #a8a29e;
+            font-style: italic;
+            line-height: 1.625;
+            margin-bottom: 1rem;
+        }
+
+        .poem-excerpt .attribution {
+            color: #f59e0b;
+            font-size: 0.875rem;
+            text-align: right;
+        }
+
+        .poem-description {
+            color: #a8a29e;
+            line-height: 1.625;
+            margin-bottom: 1.5rem;
+        }
+
+        .poem-meta {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .poem-meta-item {
+            background: rgba(12, 10, 9, 0.5);
+            border: 2px solid #b45309;
+            padding: 1rem;
+        }
+
+        .poem-meta-item .label {
+            color: #fbbf24;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .poem-meta-item .value {
+            color: #a8a29e;
+        }
+
+        .execution-box {
+            max-width: 64rem;
+            margin: 0 auto 5rem;
+            background: linear-gradient(to bottom, #450a0a, #0c0a09);
+            border: 4px solid #7f1d1d;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .execution-box h3 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .execution-grid {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .execution-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .execution-card {
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid #78350f;
+            padding: 1.5rem;
+        }
+
+        .execution-card h4 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #fbbf24;
+            margin-bottom: 1rem;
+        }
+
+        .execution-card p {
+            color: #a8a29e;
+            margin-bottom: 0.5rem;
+        }
+
+        .execution-card .note {
+            color: #a8a29e;
+            font-size: 0.875rem;
+        }
+
+        .execution-summary {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(69, 10, 10, 0.6), rgba(0, 0, 0, 0.6));
+            border: 2px solid #7f1d1d;
+            padding: 1.5rem;
+        }
+
+        .execution-summary p {
+            color: #a8a29e;
+            text-align: center;
+            font-size: 1.125rem;
+            line-height: 1.625;
+        }
+
+        .legacy-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .legacy-header h3 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .legacy-grid {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 72rem;
+            margin: 0 auto 3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        @media (min-width: 768px) {
+            .legacy-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .legacy-card {
+            background: linear-gradient(to bottom right, #1c1917, #451a03);
+            border: 4px solid #78350f;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .legacy-card:hover {
+            border-color: #d97706;
+        }
+
+        .legacy-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .legacy-card h4 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.75rem;
+        }
+
+        .legacy-card p {
+            color: #a8a29e;
+        }
+
+        .legacy-quote {
+            max-width: 64rem;
+            margin: 0 auto;
+            background: linear-gradient(to bottom right, #451a03, #713f12, #7f1d1d);
+            border: 4px double #b45309;
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .legacy-quote p {
+            font-size: 1.875rem;
+            color: #fde68a;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .legacy-quote .summary {
+            color: #a8a29e;
+            font-size: 1.125rem;
+            font-style: normal;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(to bottom, #7f1d1d, #1c1917, #451a03);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30z' fill='%23d4a574' opacity='0.3'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .course-info {
+            max-width: 56rem;
+            margin: 0 auto 4rem;
+            background: linear-gradient(to bottom right, #451a03, #713f12, #451a03);
+            border: 4px solid #b45309;
+            padding: 2rem;
+        }
+
+        .course-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .course-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .course-card {
+            background: rgba(28, 25, 23, 0.5);
+            border: 2px solid #d97706;
+            padding: 1.5rem;
+        }
+
+        .course-card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .course-detail {
+            border-left: 4px solid #d97706;
+            padding-left: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .course-detail .label {
+            color: #fcd34d;
+            font-weight: bold;
+        }
+
+        .course-detail .value {
+            color: #a8a29e;
+        }
+
+        .instructor-box {
+            margin-top: 2rem;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(69, 26, 3, 0.4), rgba(0, 0, 0, 0.4));
+            border: 2px solid #b45309;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .instructor-box .label {
+            color: #fcd34d;
+            font-weight: bold;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .instructor-box .name {
+            font-size: 1.5rem;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .team-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .team-header h3 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .team-header p {
+            color: #a8a29e;
+            font-size: 1.125rem;
+        }
+
+        .team-grid {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 72rem;
+            margin: 0 auto 4rem;
+        }
+
+        @media (min-width: 768px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .team-member {
+            background: linear-gradient(to bottom right, #292524, #451a03);
+            border: 4px solid #b45309;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            border-color: #f59e0b;
+            transform: scale(1.05);
+        }
+
+        .team-avatar {
+            background: rgba(120, 53, 15, 0.3);
+            border: 2px solid #d97706;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .team-avatar span {
+            font-size: 1.5rem;
+            color: #fbbf24;
+        }
+
+        .team-member h4 {
+            font-size: 1.125rem;
+            font-weight: bold;
+            color: #fcd34d;
+        }
+
+        .team-member .line {
+            width: 4rem;
+            height: 1px;
+            background: #d97706;
+            margin: 0.75rem auto 0;
+        }
+
+        .purpose-box {
+            max-width: 64rem;
+            margin: 0 auto 4rem;
+            background: linear-gradient(to bottom right, #1c1917, #451a03);
+            border: 4px solid #b45309;
+            padding: 2rem;
+        }
+
+        .purpose-box h3 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .purpose-intro {
+            color: #a8a29e;
+            font-size: 1.125rem;
+            line-height: 1.625;
+            margin-bottom: 1.5rem;
+        }
+
+        .purpose-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .purpose-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .purpose-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid #d97706;
+            padding: 1.5rem;
+        }
+
+        .purpose-card h4 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #fbbf24;
+            margin-bottom: 0.75rem;
+        }
+
+        .purpose-card p {
+            color: #a8a29e;
+        }
+
+        .tech-box {
+            max-width: 56rem;
+            margin: 0 auto;
+            background: linear-gradient(to bottom right, #451a03, #1c1917);
+            border: 4px solid #b45309;
+            padding: 2rem;
+        }
+
+        .tech-box h3 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .tech-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .tech-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .tech-card {
+            background: rgba(28, 25, 23, 0.5);
+            border: 2px solid #d97706;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .tech-icon {
+            font-size: 2.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tech-card h4 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #fcd34d;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-card p {
+            color: #a8a29e;
+            font-size: 0.875rem;
+        }
+
+        .dedication {
+            max-width: 56rem;
+            margin: 4rem auto 0;
+            background: linear-gradient(to right, #0c0a09, #451a03, #0c0a09);
+            border: 4px double #b45309;
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .dedication p {
+            font-size: 1.5rem;
+            color: #fcd34d;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+        }
+
+        .dedication .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .dedication .divider .line {
+            width: 6rem;
+            height: 1px;
+            background: #f59e0b;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(to bottom, #451a03, #1c1917, #451a03);
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 20h60v40H10z' fill='none' stroke='%23d4a574' stroke-width='2'/%3E%3Cpath d='M10 20l30 25 30-25' fill='none' stroke='%23d4a574' stroke-width='2'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .contact-grid {
+            display: grid;
+            gap: 3rem;
+            max-width: 72rem;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .contact-info {
+            space: 2rem;
+        }
+
+        .contact-info-box {
+            background: linear-gradient(to bottom right, #1c1917, #451a03);
+            border: 4px solid #b45309;
+            padding: 2rem;
+        }
+
+        .contact-info-box h3 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid #d97706;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item .icon {
+            font-size: 1.875rem;
+            color: #f59e0b;
+        }
+
+        .contact-item h4 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #fcd34d;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: #a8a29e;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #fbbf24;
+        }
+
+        .contact-item p {
+            color: #a8a29e;
+        }
+
+        .contact-quote {
+            background: linear-gradient(to bottom right, #451a03, #1c1917);
+            border: 4px double #b45309;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .contact-quote p {
+            font-size: 1.5rem;
+            color: #fcd34d;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .contact-quote .author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .contact-quote .author .line {
+            width: 4rem;
+            height: 1px;
+            background: #f59e0b;
+        }
+
+        .contact-quote .author span {
+            color: #f59e0b;
+            font-weight: bold;
+            font-size: 0.875rem;
+        }
+
+        .contact-form-box {
+            background: linear-gradient(to bottom right, #1c1917, #451a03);
+            border: 4px solid #b45309;
+            padding: 2rem;
+        }
+
+        .contact-form-box h3 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #fcd34d;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: #0c0a09;
+            border: 2px solid #b45309;
+            color: #a8a29e;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #f59e0b;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #57534e;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(to right, #b45309, #854d0e);
+            color: white;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border: 4px solid #78350f;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(to right, #d97706, #a16207);
+            border-color: #b45309;
+            transform: scale(1.05);
+        }
+
+        .form-note {
+            color: #a8a29e;
+            font-size: 0.875rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .project-info {
+            max-width: 56rem;
+            margin: 4rem auto 0;
+            background: linear-gradient(to right, #0c0a09, rgba(69, 26, 3, 0.5), #0c0a09);
+            border: 2px solid #78350f;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .project-info h4 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .project-info p {
+            color: #a8a29e;
+            line-height: 1.625;
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            color: #a8a29e;
+            font-size: 0.875rem;
+        }
+
+        .project-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-meta .dot {
+            color: #d97706;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to bottom, #0c0a09, black);
+            border-top: 4px solid #78350f;
+            position: relative;
+            padding: 3rem 0;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(to right, #78350f, #a16207, #78350f);
+        }
+
+        .footer-grid {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p {
+            color: #a8a29e;
+            line-height: 1.625;
+            margin-bottom: 1rem;
+        }
+
+        .footer-motto {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #78716c;
+            font-size: 0.875rem;
+        }
+
+        .footer-links {
+            text-align: center;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #a8a29e;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #fbbf24;
+        }
+
+        .footer-contact {
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-section:first-child {
+                text-align: left;
+            }
+            .footer-contact {
+                text-align: right;
+            }
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 0.75rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-contact-item {
+                justify-content: flex-end;
+            }
+        }
+
+        .footer-contact-item .icon {
+            color: #f59e0b;
+        }
+
+        .footer-contact-item a,
+        .footer-contact-item span {
+            color: #a8a29e;
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact-item a:hover {
+            color: #fbbf24;
+        }
+
+        .footer-team {
+            border-top: 1px solid #78350f;
+            padding-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-team h4 {
+            text-align: center;
+            color: #fbbf24;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .team-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+            color: #78716c;
+        }
+
+        .team-list .sep {
+            color: #78350f;
+        }
+
+        .footer-instructor {
+            text-align: center;
+            color: #57534e;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+
+        .footer-quote {
+            border-top: 1px solid #78350f;
+            border-bottom: 1px solid #78350f;
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .footer-quote p {
+            color: #fcd34d;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.125rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-quote .author {
+            text-align: center;
+            color: #78716c;
+            font-size: 0.875rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+        }
+
+        .tech-stack {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack .line {
+            width: 6rem;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #78350f);
+        }
+
+        .tech-stack .line-right {
+            background: linear-gradient(to left, transparent, #78350f);
+        }
+
+        .tech-items {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #78716c;
+            font-size: 0.875rem;
+        }
+
+        .tech-items span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .tech-items .icon {
+            color: #f59e0b;
+        }
+
+        .tech-items .sep {
+            color: #78350f;
+        }
+
+        .copyright {
+            color: #57534e;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-note {
+            color: #44403c;
+            font-size: 0.75rem;
+        }
+
+        .footer-decoration {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .footer-decoration .line {
+            width: 4rem;
+            height: 1px;
+            background: #78350f;
+        }
+
+        .footer-decoration span {
+            color: #92400e;
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="nav-brand" onclick="scrollToSection('home')">
+                <div class="nav-logo">
+                    <div class="nav-logo-inner">
+                        <span style="font-size: 1.5rem;">🇵🇭</span>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="nav-title">Dr. José Rizal</h1>
+                    <p class="nav-subtitle">Life and Works</p>
+                </div>
+            </a>
+
+            <div class="nav-menu">
+                <a href="#home" class="nav-btn active" onclick="scrollToSection('home'); return false;">
+                    <span>🏛️</span> Home
+                </a>
+                <a href="#biography" class="nav-btn" onclick="scrollToSection('biography'); return false;">
+                    <span>📖</span> Biography
+                </a>
+                <a href="#literary-works" class="nav-btn" onclick="scrollToSection('literary-works'); return false;">
+                    <span>✍️</span> Literary Works
+                </a>
+                <a href="#nationalism" class="nav-btn" onclick="scrollToSection('nationalism'); return false;">
+                    <span>🇵🇭</span> Nationalism
+                </a>
+                <a href="#martyrdom" class="nav-btn" onclick="scrollToSection('martyrdom'); return false;">
+                    <span>✞</span> Martyrdom
+                </a>
+                <a href="#about" class="nav-btn" onclick="scrollToSection('about'); return false;">
+                    <span>👥</span> About
+                </a>
+                <a href="#contact" class="nav-btn" onclick="scrollToSection('contact'); return false;">
+                    <span>✉️</span> Contact
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="container">
+                <a href="#home" class="mobile-nav-btn active" onclick="scrollToSection('home'); return false;">
+                    <span style="margin-right: 0.75rem;">🏛️</span> Home
+                </a>
+                <a href="#biography" class="mobile-nav-btn" onclick="scrollToSection('biography'); return false;">
+                    <span style="margin-right: 0.75rem;">📖</span> Biography
+                </a>
+                <a href="#literary-works" class="mobile-nav-btn" onclick="scrollToSection('literary-works'); return false;">
+                    <span style="margin-right: 0.75rem;">✍️</span> Literary Works
+                </a>
+                <a href="#nationalism" class="mobile-nav-btn" onclick="scrollToSection('nationalism'); return false;">
+                    <span style="margin-right: 0.75rem;">🇵🇭</span> Nationalism
+                </a>
+                <a href="#martyrdom" class="mobile-nav-btn" onclick="scrollToSection('martyrdom'); return false;">
+                    <span style="margin-right: 0.75rem;">✞</span> Martyrdom
+                </a>
+                <a href="#about" class="mobile-nav-btn" onclick="scrollToSection('about'); return false;">
+                    <span style="margin-right: 0.75rem;">👥</span> About
+                </a>
+                <a href="#contact" class="mobile-nav-btn" onclick="scrollToSection('contact'); return false;">
+                    <span style="margin-right: 0.75rem;">✉️</span> Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-grid">
+                <div class="hero-text animate-fade-in-up">
+                    <div class="hero-badge">
+                        <span>1861 - 1896</span>
+                    </div>
+                    
+                    <h1>
+                        Dr. José
+                        <span>Protacio Rizal</span>
+                    </h1>
+                    
+                    <div class="hero-divider"></div>
+                    
+                    <p class="hero-quote">"The youth is the hope of our future"</p>
+                    
+                    <p class="hero-desc">
+                        Filipino nationalist, novelist, poet, ophthalmologist, journalist, and revolutionary. 
+                        His writings inspired the Philippine Revolution against Spanish colonial rule.
+                    </p>
+
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <p class="number">35</p>
+                            <p class="label">Years of Life</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="number">22+</p>
+                            <p class="label">Languages</p>
+                        </div>
+                        <div class="stat-card">
+                            <p class="number">2</p>
+                            <p class="label">Major Novels</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-image animate-fade-in">
+                    <div class="hero-portrait">
+                        <div class="portrait-frame">
+                            <img src="https://www.vedantu.com/seo/content-images/a928e5ba-f820-4d9b-b0b6-544671a0ff36_compressed_31.jpg" alt="Dr. Jose Rizal">
+                            <div class="portrait-caption">
+                                <p>DR. JOSÉ RIZAL</p>
+                                <p class="sub">National Hero of the Philippines</p>
+                            </div>
+                        </div>
+                        <div class="corner-decoration corner-tl"></div>
+                        <div class="corner-decoration corner-tr"></div>
+                        <div class="corner-decoration corner-bl"></div>
+                        <div class="corner-decoration corner-br"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator animate-bounce">
+            <div class="scroll-indicator-inner"></div>
+        </div>
+    </section>
+
+    <!-- Biography Section -->
+    <section class="biography" id="biography">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <div class="section-title-box">
+                    <h2>Life & Journey</h2>
+                    <div class="section-divider"></div>
+                    <p>From his birth in Calamba to his martyrdom at Bagumbayan, follow the remarkable journey of the Philippines' greatest hero.</p>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-text">
+                            <div class="timeline-card">
+                                <div class="timeline-year">
+                                    <div class="line"></div>
+                                    <span>1861</span>
+                                </div>
+                                <h3>Birth</h3>
+                                <p>Born in Calamba, Laguna on June 19</p>
+                            </div>
+                        </div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-image">
+                            <div class="timeline-image-frame">
+                                <img src="https://bilibb.ph/wp-content/uploads/2024/06/Dr-Jose-Rizal-001.jpg" alt="Birth">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-text">
+                            <div class="timeline-card">
+                                <div class="timeline-year">
+                                    <div class="line"></div>
+                                    <span>1872</span>
+                                </div>
+                                <h3>Awakening</h3>
+                                <p>Witnessed the execution of GomBurZa, sparking his nationalism</p>
+                            </div>
+                        </div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-image"></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-text">
+                            <div class="timeline-card">
+                                <div class="timeline-year">
+                                    <div class="line"></div>
+                                    <span>1877</span>
+                                </div>
+                                <h3>Education Begins</h3>
+                                <p>Enrolled at Ateneo Municipal de Manila</p>
+                            </div>
+                        </div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-image"></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-text">
+                            <div class="timeline-card">
+                                <div class="timeline-year">
+                                    <div class="line"></div>
+                                    <span>1882</span>
+                                </div>
+                                <h3>Journey to Europe</h3>
+                                <p>Traveled to Spain to continue his studies in medicine</p>
+                            </div>
+                        </div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-image"></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-text">
+                            <div class="timeline-card">
+                                <div class="timeline-year">
+                                    <div class="line"></div>
+                                    <span>1885</span>
+                                </div>
+                                <h3>Medical Degree</h3>
+                                <p>Completed his medical degree at Universidad Central de Madrid</p>
+                            </div>
+                        </div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-image"></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-text">
+                            <div class="timeline-card">
+                                <div class="timeline-year">
+                                    <div class="line"></div>
+                                    <span>1887</span>
+                                </div>
+                                <h3>Noli Me Tangere</h3>
+                                <p>Published his first novel in Berlin, Germany</p>
+                            </div>
+                        </div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-image">
+                            <div class="timeline-image-frame">
+                                <img src="images/noli-me-tangere.jpg" alt="Noli Me Tangere">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-text">
+                            <div class="timeline-card">
+                                <div class="timeline-year">
+                                    <div class="line"></div>
+                                    <span>1891</span>
+                                </div>
+                                <h3>El Filibusterismo</h3>
+                                <p>Published his second novel in Ghent, Belgium</p>
+                            </div>
+                        </div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-image">
+                            <div class="timeline-image-frame">
+                                <img src="images/el-filibusterismo.jpg" alt="El Filibusterismo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-text">
+                            <div class="timeline-card">
+                                <div class="timeline-year">
+                                    <div class="line"></div>
+                                    <span>1892</span>
+                                </div>
+                                <h3>La Liga Filipina</h3>
+                                <p>Founded La Liga Filipina for Filipino unity and reforms</p>
+                            </div>
+                        </div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-image">
+                            <div class="timeline-image-frame">
+                                <img src="images/rizal-writing.jpg" alt="La Liga Filipina">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-text">
+                            <div class="timeline-card">
+                                <div class="timeline-year">
+                                    <div class="line"></div>
+                                    <span>1892</span>
+                                </div>
+                                <h3>Exile to Dapitan</h3>
+                                <p>Exiled to Dapitan, Zamboanga for four years</p>
+                            </div>
+                        </div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-image"></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-text">
+                            <div class="timeline-card">
+                                <div class="timeline-year">
+                                    <div class="line"></div>
+                                    <span>1896</span>
+                                </div>
+                                <h3>Martyrdom</h3>
+                                <p>Executed by firing squad at Bagumbayan (now Luneta) on December 30</p>
+                            </div>
+                        </div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-image">
+                            <div class="timeline-image-frame">
+                                <img src="images/rizal-monument.jpg" alt="Monument">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <p>"He who does not love his own language is worse than an animal and smelly fish."</p>
+                <p class="author">— Dr. José Rizal</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Literary Works Section -->
+    <section class="literary-works" id="literary-works">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <div class="section-title-box" style="border-style: double;">
+                    <h2>Literary Masterpieces</h2>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+                        <div style="width: 4rem; height: 4px; background: #d97706;"></div>
+                        <span style="color: #f59e0b;">✦</span>
+                        <div style="width: 4rem; height: 4px; background: #d97706;"></div>
+                    </div>
+                    <p>Two revolutionary novels that awakened Filipino consciousness and sparked the fight for independence.</p>
+                </div>
+            </div>
+
+            <!-- Noli Me Tangere -->
+            <div class="book-section">
+                <div class="book-grid">
+                    <div class="book-cover">
+                        <div class="book-frame">
+                            <img src="images/noli-me-tangere.jpg" alt="Noli Me Tangere">
+                            <div class="book-meta">
+                                <p>1887 • Berlin, Germany</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="book-content">
+                        <div class="book-header">
+                            <h3>Noli Me Tángere</h3>
+                            <p class="subtitle">(Touch Me Not)</p>
+                            <p>Rizal's first novel exposes the corruption and abuse of the Spanish colonial government and clergy in the Philippines. Through the story of Crisóstomo Ibarra, it reveals the social cancer plaguing Filipino society.</p>
+                        </div>
+
+                        <div class="themes-box">
+                            <h4>Major Themes</h4>
+                            <ul>
+                                <li>Colonial oppression and abuse</li>
+                                <li>Church corruption and hypocrisy</li>
+                                <li>Social inequality and injustice</li>
+                                <li>Filipino identity and nationalism</li>
+                                <li>Education as liberation</li>
+                            </ul>
+                        </div>
+
+                        <div class="characters-box">
+                            <h4>Key Characters</h4>
+                            <div class="characters-list">
+                                <div class="character-item">
+                                    <p class="name">Crisóstomo Ibarra</p>
+                                    <p class="role">Protagonist, idealistic young Filipino</p>
+                                </div>
+                                <div class="character-item">
+                                    <p class="name">María Clara</p>
+                                    <p class="role">Ibarra's beloved, symbol of Filipino women</p>
+                                </div>
+                                <div class="character-item">
+                                    <p class="name">Padre Dámaso</p>
+                                    <p class="role">Corrupt Spanish friar, antagonist</p>
+                                </div>
+                                <div class="character-item">
+                                    <p class="name">Elías</p>
+                                    <p class="role">Mysterious ally, revolutionary figure</p>
+                                </div>
+                                <div class="character-item">
+                                    <p class="name">Sisa</p>
+                                    <p class="role">Tragic mother, symbol of suffering</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-divider-center">
+                <div class="line"></div>
+                <span>❖</span>
+                <div class="line"></div>
+            </div>
+
+            <!-- El Filibusterismo -->
+            <div class="book-section reverse">
+                <div class="book-grid">
+                    <div class="book-content">
+                        <div class="book-header">
+                            <h3>El Filibusterismo</h3>
+                            <p class="subtitle">(The Reign of Greed)</p>
+                            <p>The sequel to Noli Me Tángere follows Simoun, the vengeful Ibarra who returns disguised as a wealthy jeweler to incite revolution. A darker tale that explores the limits of reform and the call for radical change.</p>
+                        </div>
+
+                        <div class="themes-box">
+                            <h4>Major Themes</h4>
+                            <ul>
+                                <li>Revolution vs. Reform</li>
+                                <li>Revenge and redemption</li>
+                                <li>Greed and moral corruption</li>
+                                <li>Hope and despair</li>
+                                <li>The cost of freedom</li>
+                            </ul>
+                        </div>
+
+                        <div class="characters-box">
+                            <h4>Key Characters</h4>
+                            <div class="characters-list">
+                                <div class="character-item">
+                                    <p class="name">Simoun</p>
+                                    <p class="role">Ibarra in disguise, revolutionary mastermind</p>
+                                </div>
+                                <div class="character-item">
+                                    <p class="name">Basilio</p>
+                                    <p class="role">Medical student, Sisa's son</p>
+                                </div>
+                                <div class="character-item">
+                                    <p class="name">Isagani</p>
+                                    <p class="role">Idealistic poet and student</p>
+                                </div>
+                                <div class="character-item">
+                                    <p class="name">Paulita Gómez</p>
+                                    <p class="role">Isagani's love interest</p>
+                                </div>
+                                <div class="character-item">
+                                    <p class="name">Padre Florentino</p>
+                                    <p class="role">Wise priest, voice of reason</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="book-cover">
+                        <div class="book-frame" style="background: linear-gradient(to bottom left, #92400e, #7f1d1d); border-color: #78350f;">
+                            <img src="images/el-filibusterismo.jpg" alt="El Filibusterismo">
+                            <div class="book-meta">
+                                <p>1891 • Ghent, Belgium</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="impact-box">
+                <p>"These novels served as the catalyst for the Philippine Revolution, awakening the Filipino spirit and igniting the flame of independence."</p>
+                <div class="line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nationalism Section -->
+    <section class="nationalism" id="nationalism">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <div class="section-title-box">
+                    <h2>Nationalism & Reforms</h2>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+                        <div style="width: 5rem; height: 4px; background: #d97706;"></div>
+                        <span style="font-size: 1.875rem;">🇵🇭</span>
+                        <div style="width: 5rem; height: 4px; background: #d97706;"></div>
+                    </div>
+                    <p>Rizal's vision for Philippine independence through peaceful reform and national awakening.</p>
+                </div>
+            </div>
+
+            <div class="laliga-box animate-fade-in-up">
+                <div class="laliga-header">
+                    <h3>La Liga Filipina</h3>
+                    <div class="line"></div>
+                    <p>Founded July 3, 1892 in Manila</p>
+                </div>
+
+                <div class="laliga-grid">
+                    <div class="laliga-card">
+                        <h4>Aims</h4>
+                        <ul>
+                            <li>Unite the Filipino people into one vigorous and homogeneous body</li>
+                            <li>Mutual protection in every want and necessity</li>
+                            <li>Defense against all violence and injustice</li>
+                            <li>Encouragement of education, agriculture, and commerce</li>
+                        </ul>
+                    </div>
+
+                    <div class="laliga-card">
+                        <h4>Motto</h4>
+                        <div class="motto-box">
+                            <p>"Unus Instar Omnium"</p>
+                            <p class="translation">One Like All</p>
+                        </div>
+                        <p style="color: #a8a29e; line-height: 1.625;">The organization aimed to unite Filipinos regardless of social status, promoting equality and collective action for national progress through peaceful means.</p>
+                    </div>
+                </div>
+
+                <div class="history-note">
+                    <p><span>Historical Note:</span> La Liga Filipina was dissolved just days after its founding when Rizal was arrested and exiled to Dapitan. Despite its brief existence, it inspired the formation of the revolutionary Katipunan.</p>
+                </div>
+            </div>
+
+            <div class="reforms-header">
+                <h3>Propaganda Movement Reforms</h3>
+                <p>Peaceful reforms advocated by Rizal and fellow ilustrados</p>
+            </div>
+
+            <div class="reforms-grid">
+                <div class="reform-card">
+                    <div class="reform-number"><span>1</span></div>
+                    <h4>Equality Before the Law</h4>
+                    <p>Equal rights and treatment for Filipinos and Spaniards under colonial law</p>
+                </div>
+                <div class="reform-card">
+                    <div class="reform-number"><span>2</span></div>
+                    <h4>Filipino Representation</h4>
+                    <p>Philippine representation in the Spanish Cortes (Parliament)</p>
+                </div>
+                <div class="reform-card">
+                    <div class="reform-number"><span>3</span></div>
+                    <h4>Freedom of Speech & Assembly</h4>
+                    <p>Right to free expression and peaceful assembly for all Filipinos</p>
+                </div>
+                <div class="reform-card">
+                    <div class="reform-number"><span>4</span></div>
+                    <h4>Secularization of Clergy</h4>
+                    <p>Filipino priests to hold positions in the Catholic Church</p>
+                </div>
+                <div class="reform-card">
+                    <div class="reform-number"><span>5</span></div>
+                    <h4>Educational Reform</h4>
+                    <p>Expansion of public education and establishment of schools</p>
+                </div>
+                <div class="reform-card">
+                    <div class="reform-number"><span>6</span></div>
+                    <h4>Abolition of Abuses</h4>
+                    <p>End to forced labor (polo) and tribute collection (bandala)</p>
+                </div>
+            </div>
+
+            <div class="principles-header">
+                <h3>Guiding Principles</h3>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <div class="principle-icon">📚</div>
+                    <h4>Education as Liberation</h4>
+                    <div class="principle-quote">
+                        <p>"Education is the key to unlock the golden door of freedom"</p>
+                    </div>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-icon">🕊️</div>
+                    <h4>Peaceful Reform</h4>
+                    <div class="principle-quote">
+                        <p>"The pen is mightier than the sword"</p>
+                    </div>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-icon">🇵🇭</div>
+                    <h4>Filipino Identity</h4>
+                    <div class="principle-quote">
+                        <p>"To be a Filipino is to be proud of one's heritage"</p>
+                    </div>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-icon">⚖️</div>
+                    <h4>Justice & Equality</h4>
+                    <div class="principle-quote">
+                        <p>"The tyranny of some is possible only through the cowardice of others"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nationalism-quote">
+                <p>"I wish to show those who deny us patriotism that we know how to die for our duty and our convictions."</p>
+                <div class="quote-author">
+                    <div class="line"></div>
+                    <span>DR. JOSÉ RIZAL</span>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Martyrdom Section -->
+    <section class="martyrdom" id="martyrdom">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <div class="section-title-box" style="background: rgba(0, 0, 0, 0.8);">
+                    <h2>Martyrdom & Legacy</h2>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+                        <div style="width: 5rem; height: 4px; background: #7f1d1d;"></div>
+                        <span style="color: #b45309;">✞</span>
+                        <div style="width: 5rem; height: 4px; background: #7f1d1d;"></div>
+                    </div>
+                    <p>December 30, 1896 - The day a hero fell, and a nation was born</p>
+                </div>
+            </div>
+
+            <div class="final-days">
+                <h3>The Final Days</h3>
+                <div class="final-days-list">
+                    <div class="final-day-item">
+                        <div class="final-day-date">
+                            <div class="date-box">
+                                <p>December 26, 1896</p>
+                            </div>
+                        </div>
+                        <div class="final-day-content">
+                            <p>Arrived in Manila from Spain aboard the steamer Colon</p>
+                        </div>
+                    </div>
+                    <div class="final-day-item">
+                        <div class="final-day-date">
+                            <div class="date-box">
+                                <p>December 27, 1896</p>
+                            </div>
+                        </div>
+                        <div class="final-day-content">
+                            <p>Court martial trial held, declared guilty of rebellion</p>
+                        </div>
+                    </div>
+                    <div class="final-day-item">
+                        <div class="final-day-date">
+                            <div class="date-box">
+                                <p>December 28, 1896</p>
+                            </div>
+                        </div>
+                        <div class="final-day-content">
+                            <p>Sentenced to death by firing squad</p>
+                        </div>
+                    </div>
+                    <div class="final-day-item">
+                        <div class="final-day-date">
+                            <div class="date-box">
+                                <p>December 29, 1896</p>
+                            </div>
+                        </div>
+                        <div class="final-day-content">
+                            <p>Wrote 'Mi Último Adiós' (My Last Farewell) in his cell</p>
+                        </div>
+                    </div>
+                    <div class="final-day-item">
+                        <div class="final-day-date">
+                            <div class="date-box">
+                                <p>December 30, 1896</p>
+                            </div>
+                        </div>
+                        <div class="final-day-content">
+                            <p>Executed at Bagumbayan Field at 7:03 AM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="poem-section">
+                <div class="monument-frame">
+                    <div class="monument-frame-inner">
+                        <img src="images/rizal-monument.jpg" alt="Rizal Monument">
+                        <div class="monument-caption">
+                            <p>Rizal Monument, Luneta Park</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poem-content">
+                    <div class="poem-box">
+                        <h3>Mi Último Adiós</h3>
+                        <p class="subtitle">(My Last Farewell)</p>
+                        
+                        <div class="poem-excerpt">
+                            <p>"Farewell, dear Fatherland, clime of the sun caress'd,<br>
+                            Pearl of the Orient seas, our Eden lost!<br>
+                            Gladly now I go to give thee this faded life's best,<br>
+                            And were it brighter, fresher, or more blest,<br>
+                            Still would I give it thee, nor count the cost."</p>
+                            <p class="attribution">— Opening stanza</p>
+                        </div>
+
+                        <p class="poem-description">Written on the eve of his execution, this masterpiece became Rizal's final gift to the Filipino people. Hidden in an alcohol cooking stove, the poem was discovered by his family after his death.</p>
+
+                        <div class="poem-meta">
+                            <div class="poem-meta-item">
+                                <p class="label">Language</p>
+                                <p class="value">Spanish</p>
+                            </div>
+                            <div class="poem-meta-item">
+                                <p class="label">Stanzas</p>
+                                <p class="value">14 Stanzas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="execution-box">
+                <h3>The Execution</h3>
+                <div class="execution-grid">
+                    <div class="execution-card">
+                        <h4>Location</h4>
+                        <p>Bagumbayan Field (now Luneta/Rizal Park)</p>
+                        <p class="note">The execution site is now a sacred ground, home to the Rizal Monument</p>
+                    </div>
+                    <div class="execution-card">
+                        <h4>Last Moments</h4>
+                        <p>Refused blindfold and knelt to face the firing squad</p>
+                        <p class="note">His final words: "Consummatum est" (It is finished)</p>
+                    </div>
+                </div>
+                <div class="execution-summary">
+                    <p>At 7:03 AM on December 30, 1896, Dr. José Rizal faced the firing squad with remarkable composure. Shot in the back, he managed to turn his body as he fell, dying face up towards the morning sky. His execution sparked outrage and became the rallying cry for the Philippine Revolution.</p>
+                </div>
+            </div>
+
+            <div class="legacy-header">
+                <h3>Enduring Legacy</h3>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="legacy-grid">
+                <div class="legacy-card">
+                    <div class="legacy-icon">🏛️</div>
+                    <h4>National Hero</h4>
+                    <p>Officially recognized as the Philippines' foremost national hero</p>
+                </div>
+                <div class="legacy-card">
+                    <div class="legacy-icon">📅</div>
+                    <h4>Rizal Day</h4>
+                    <p>December 30 declared as national holiday in his honor</p>
+                </div>
+                <div class="legacy-card">
+                    <div class="legacy-icon">📖</div>
+                    <h4>Required Study</h4>
+                    <p>His life and works are mandatory subjects in Philippine education</p>
+                </div>
+            </div>
+
+            <div class="legacy-quote">
+                <p>"Rizal did not become great because he was a hero; he became a hero because of his greatness."</p>
+                <div class="quote-author">
+                    <div class="line"></div>
+                    <span>✦</span>
+                    <div class="line"></div>
+                </div>
+                <p class="summary">His sacrifice awakened Filipino consciousness and paved the way for independence. His ideals of education, peaceful reform, and love of country continue to inspire generations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <div class="section-title-box">
+                    <h2>About This Project</h2>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+                        <div style="width: 5rem; height: 4px; background: #d97706;"></div>
+                        <span style="color: #f59e0b;">🎓</span>
+                        <div style="width: 5rem; height: 4px; background: #d97706;"></div>
+                    </div>
+                    <p>A comprehensive digital tribute to Dr. José Rizal created by BSIT students of Samar State University</p>
+                </div>
+            </div>
+
+            <div class="course-info">
+                <div class="course-grid">
+                    <div class="course-card">
+                        <h3>Course Details</h3>
+                        <div class="course-detail">
+                            <p class="label">Subject</p>
+                            <p class="value">Life and Works of Rizal</p>
+                        </div>
+                        <div class="course-detail">
+                            <p class="label">Course Code</p>
+                            <p class="value">GE 9</p>
+                        </div>
+                        <div class="course-detail">
+                            <p class="label">Section</p>
+                            <p class="value">BSIT-3B (3rd Year)</p>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <h3>Institution</h3>
+                        <div class="course-detail">
+                            <p class="label">University</p>
+                            <p class="value">Samar State University</p>
+                        </div>
+                        <div class="course-detail">
+                            <p class="label">Program</p>
+                            <p class="value">Bachelor of Science in Information Technology</p>
+                        </div>
+                        <div class="course-detail">
+                            <p class="label">Academic Year</p>
+                            <p class="value">2025-2026</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="instructor-box">
+                    <p class="label">Instructor</p>
+                    <p class="name">Ms. Rachel R. Nacionales</p>
+                </div>
+            </div>
+
+            <div class="team-header">
+                <h3>Members</h3>
+                <div class="section-divider"></div>
+                <p>BSIT-3B</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-avatar"><span>👤</span></div>
+                    <h4>Aguilar, Christian Charles R.</h4>
+                    <div class="line"></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar"><span>👤</span></div>
+                    <h4>Peco, Shaine M.</h4>
+                    <div class="line"></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar"><span>👤</span></div>
+                    <h4>Catalan, Andrew B.</h4>
+                    <div class="line"></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar"><span>👤</span></div>
+                    <h4>Dela Cruz, Rona Mae C.</h4>
+                    <div class="line"></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar"><span>👤</span></div>
+                    <h4>Capili, Joshua B.</h4>
+                    <div class="line"></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar"><span>👤</span></div>
+                    <h4>De Guzman, Clarita F.</h4>
+                    <div class="line"></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar"><span>👤</span></div>
+                    <h4>Estilles, Catherine O.</h4>
+                    <div class="line"></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar"><span>👤</span></div>
+                    <h4>Labado, Rhea Mae A.</h4>
+                    <div class="line"></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar"><span>👤</span></div>
+                    <h4>Morcilla, Trisha Mae T.</h4>
+                    <div class="line"></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar"><span>👤</span></div>
+                    <h4>Violante, Marisa M.</h4>
+                    <div class="line"></div>
+                </div>
+            </div>
+
+            <div class="purpose-box">
+                <h3>Project Purpose</h3>
+                <p class="purpose-intro">This website serves as a comprehensive digital resource dedicated to the life, works, and legacy of Dr. José Rizal, the Philippines' foremost national hero. Through this platform, we aim to:</p>
+
+                <div class="purpose-grid">
+                    <div class="purpose-card">
+                        <h4>📚 Educate</h4>
+                        <p>Provide accessible and engaging information about Rizal's contributions to Philippine independence and national identity.</p>
+                    </div>
+                    <div class="purpose-card">
+                        <h4>🌟 Inspire</h4>
+                        <p>Encourage patriotism and civic consciousness among Filipinos, especially the youth, through Rizal's example.</p>
+                    </div>
+                    <div class="purpose-card">
+                        <h4>🔍 Preserve</h4>
+                        <p>Keep alive the memory and teachings of Rizal for future generations through modern digital platforms.</p>
+                    </div>
+                    <div class="purpose-card">
+                        <h4>💡 Apply</h4>
+                        <p>Demonstrate practical application of web development skills in creating meaningful educational content.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-box">
+                <h3>Technologies Used</h3>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon">⚛️</div>
+                        <h4>React</h4>
+                        <p>Modern JavaScript library for building user interfaces</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🎨</div>
+                        <h4>Tailwind CSS</h4>
+                        <p>Utility-first CSS framework for responsive design</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">⚡</div>
+                        <h4>Vite</h4>
+                        <p>Next-generation frontend build tool</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dedication">
+                <p>"This project is dedicated to all Filipinos who continue to uphold the ideals of Dr. José Rizal — nationalism, education, and peaceful reform."</p>
+                <div class="divider">
+                    <div class="line"></div>
+                    <span style="color: #f59e0b;">🇵🇭</span>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <div class="section-title-box">
+                    <h2>Contact Us</h2>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+                        <div style="width: 5rem; height: 4px; background: #d97706;"></div>
+                        <span style="color: #f59e0b;">✉️</span>
+                        <div style="width: 5rem; height: 4px; background: #d97706;"></div>
+                    </div>
+                    <p>Get in touch with our team for inquiries or feedback</p>
+                </div>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-info-box">
+                        <h3>Get In Touch</h3>
+                        
+                        <div class="contact-item">
+                            <span class="icon">📧</span>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:christiancharles.aguilar@ssu.edu.ph">christiancharles.aguilar@ssu.edu.ph</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="icon">🏫</span>
+                            <div>
+                                <h4>Institution</h4>
+                                <p>Samar State University</p>
+                                <p style="font-size: 0.875rem; color: #a8a29e;">BSIT-3B, 3rd Year</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="icon">📚</span>
+                            <div>
+                                <h4>Course</h4>
+                                <p>Life and Works of Rizal (GE 9)</p>
+                                <p style="font-size: 0.875rem; color: #a8a29e;">Instructor: Ms. Rachel R. Nacionales</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-quote">
+                        <p>"To foretell the destiny of a nation, it is necessary to open the book that tells of her past."</p>
+                        <div class="author">
+                            <div class="line"></div>
+                            <span>DR. JOSÉ RIZAL</span>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-box">
+                    <h3>Send a Message</h3>
+                    
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Juan dela Cruz" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Inquiry about Rizal's works" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <span>✉️</span>
+                        </button>
+
+                        <p class="form-note">Clicking "Send Message" will open your email client</p>
+                    </form>
+                </div>
+            </div>
+
+            <div class="project-info">
+                <h4>Project Collaboration</h4>
+                <p>This website was collaboratively developed by BSIT students as part of their GE 9 (Life and Works of Rizal) course requirements. We welcome feedback, suggestions, and inquiries about our project.</p>
+                <div class="project-meta">
+                    <span>🎓 Educational Project</span>
+                    <span class="dot">•</span>
+                    <span>🇵🇭 Samar State University</span>
+                    <span class="dot">•</span>
+                    <span>📅 2025-2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Life and Works of Rizal</h3>
+                    <p>A comprehensive digital resource dedicated to Dr. José Rizal, the Philippines' national hero.</p>
+                    <div class="footer-motto">
+                        <span>🇵🇭</span>
+                        <span>Maka-Diyos, Maka-Tao, Makakalikasan, Makabansa</span>
+                    </div>
+                </div>
+
+                <div class="footer-section footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home" onclick="scrollToSection('home'); return false;">Home</a></li>
+                        <li><a href="#biography" onclick="scrollToSection('biography'); return false;">Biography</a></li>
+                        <li><a href="#literary-works" onclick="scrollToSection('literary-works'); return false;">Literary Works</a></li>
+                        <li><a href="#nationalism" onclick="scrollToSection('nationalism'); return false;">Nationalism</a></li>
+                        <li><a href="#martyrdom" onclick="scrollToSection('martyrdom'); return false;">Martyrdom</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section footer-contact">
+                    <h3>Contact</h3>
+                    <div class="footer-contact-item">
+                        <span class="icon">📧</span>
+                        <a href="mailto:christiancharles.aguilar@ssu.edu.ph">christiancharles.aguilar@ssu.edu.ph</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span class="icon">🏫</span>
+                        <span>Samar State University</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span class="icon">📚</span>
+                        <span>BSIT-3B | GE 9</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-team">
+                <h4>Development Team</h4>
+                <div class="team-list">
+                    <span>Aguilar, C.C.</span>
+                    <span class="sep">•</span>
+                    <span>Catalan, A.</span>
+                    <span class="sep">•</span>
+                    <span>Capili, J.</span>
+                    <span class="sep">•</span>
+                    <span>Peco, S.</span>
+                    <span class="sep">•</span>
+                    <span>Violante, M.</span>
+                    <span class="sep">•</span>
+                    <span>Estilles, C.</span>
+                    <span class="sep">•</span>
+                    <span>Ocenada, A.M.</span>
+                    <span class="sep">•</span>
+                    <span>Dela Cruz, R.M.</span>
+                    <span class="sep">•</span>
+                    <span>De Guzman, C.</span>
+                    <span class="sep">•</span>
+                    <span>Labado, R.M.</span>
+                    <span class="sep">•</span>
+                    <span>Morcilla, T.</span>
+                </div>
+                <p class="footer-instructor">Under the guidance of Ms. Rachel R. Nacionales</p>
+            </div>
+
+            <div class="footer-quote">
+                <p>"The Philippines a century hence will inevitably be free."</p>
+                <p class="author">— Dr. José Rizal</p>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="tech-stack">
+                    <div class="line"></div>
+                    <div class="tech-items">
+                        <span><span class="icon">⚛️</span> React</span>
+                        <span class="sep">•</span>
+                        <span><span class="icon">🎨</span> Tailwind</span>
+                        <span class="sep">•</span>
+                        <span><span class="icon">⚡</span> Vite</span>
+                    </div>
+                    <div class="line line-right"></div>
+                </div>
+
+                <p class="copyright">© 2026 Life and Works of Rizal Website. Created for educational purposes.</p>
+                <p class="footer-note">This project is a student academic requirement and is dedicated to preserving and promoting the legacy of Dr. José Rizal, the national hero of the Philippines.</p>
+            </div>
+
+            <div class="footer-decoration">
+                <div class="line"></div>
+                <span>✦</span>
+                <div class="line"></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Update active section
+            updateActiveSection();
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('open');
+        }
+
+        // Scroll to section
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const offset = 80;
+                const elementPosition = element.offsetTop - offset;
+                window.scrollTo({
+                    top: elementPosition,
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.remove('open');
+            }
+        }
+
+        // Update active navigation
+        function updateActiveSection() {
+            const sections = ['home', 'biography', 'literary-works', 'nationalism', 'martyrdom', 'about', 'contact'];
+            const scrollPosition = window.scrollY + 200;
+
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = document.getElementById(sections[i]);
+                if (section && section.offsetTop <= scrollPosition) {
+                    // Update desktop nav
+                    document.querySelectorAll('.nav-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    document.querySelectorAll('.mobile-nav-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+
+                    const activeBtn = document.querySelector(`.nav-btn[href="#${sections[i]}"]`);
+                    const activeMobileBtn = document.querySelector(`.mobile-nav-btn[href="#${sections[i]}"]`);
+                    if (activeBtn) activeBtn.classList.add('active');
+                    if (activeMobileBtn) activeMobileBtn.classList.add('active');
+                    break;
+                }
+            }
+        }
+
+        // Contact form handler
+        function handleSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            const mailtoLink = `mailto:christiancharles.aguilar@ssu.edu.ph?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+            window.location.href = mailtoLink;
+        }
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item, .reform-card, .principle-card, .team-member, .legacy-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
